@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      nodeSelector:
+        node-name: arm-worker
+      containers:
+      - name: nginx
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80
+      tolerations:
+      - key: "key1"
+        operator: "Exists"  # if key exists then schedule to that node independent on value  
+        # operator: "Equal"  # both key and value should match with node taint
+        value: value1
+        effect: "NoSchedule"

@@ -1,0 +1,25 @@
+# This deployment attempts to mount a volume that doesn't exist on the node, causing the container to fail to start.
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: volume-mounting-issues-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: volume-mounting-issues
+  template:
+    metadata:
+      labels:
+        app: volume-mounting-issues
+    spec:
+      volumes:
+      - name: non-existing-volume
+        emptyDir: {}
+      containers:
+      - name: volume-mounting-issues-container
+        image: nginx
+        volumeMounts:
+        - name: non-existing-volume
+          mountPath: /data

@@ -1,0 +1,19 @@
+# This deployment runs a simple application that intentionally throws an error to demonstrate application-level issues.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-errors-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-errors
+  template:
+    metadata:
+      labels:
+        app: app-errors
+    spec:
+      containers:
+      - name: app-errors-container
+        image: alpine
+        command: ["sh", "-c", "exit 1"]

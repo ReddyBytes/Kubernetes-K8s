@@ -1,0 +1,21 @@
+# This deployment uses a private image registry that requires authentication, demonstrating issues with pulling the image.
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: image-pull-errors-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: image-pull-errors
+  template:
+    metadata:
+      labels:
+        app: image-pull-errors
+    spec:
+      imagePullSecrets:
+      - name: myregistrykey
+      containers:
+      - name: image-pull-errors-container
+        image: my-private-registry.com/my-image:latest

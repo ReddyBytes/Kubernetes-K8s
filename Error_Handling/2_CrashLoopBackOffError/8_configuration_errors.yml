@@ -1,0 +1,20 @@
+# This deployment includes a typo in the container's command, causing the container to exit immediately.
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: config-error-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: config-error
+  template:
+    metadata:
+      labels:
+        app: config-error
+    spec:
+      containers:
+      - name: config-error-container
+        image: nginx
+        command: ["sh", "-c", "echo Hello World"]

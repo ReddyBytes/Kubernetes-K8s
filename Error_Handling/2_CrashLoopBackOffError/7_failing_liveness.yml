@@ -1,0 +1,26 @@
+# here kubelet tries to find the health of /healthy file whic is not present so altimetly container crashes and wait for 10 sec as we mentioned 
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: probe-failure-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: probe-failure
+  template:
+    metadata:
+      labels:
+        app: probe-failure
+    spec:
+      containers:
+      - name: probe-failure-container
+        image: nginx
+        livenessProbe:
+          httpGet:
+            path: /healthy
+            port: 8080
+          initialDelaySeconds: 10
+          timeoutSeconds: 5
+          failureThreshold: 1

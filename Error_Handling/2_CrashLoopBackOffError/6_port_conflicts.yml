@@ -1,0 +1,22 @@
+# This deployment attempts to bind to a port that's already in use by another process on the node, causing the container to fail to start.
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: port-conflict-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: port-conflict
+  template:
+    metadata:
+      labels:
+        app: port-conflict
+    spec:
+      containers:
+      - name: port-conflict-container
+        image: nginx
+        ports:
+        - containerPort: 80
+          hostPort: 8080

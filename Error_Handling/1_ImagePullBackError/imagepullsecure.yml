@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+  namespace: default
+spec:
+  containers:
+  - name: my-container
+    image: <private_registry>/<image_name>:<tag>
+  imagePullSecrets:
+  - name: myregistrykey     # To create this secret go to theory.md file

@@ -1,0 +1,23 @@
+# This deployment yml file sets high CPU and memory limits that exceed the capabilities of the node, causing the container to be crash.
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: resource-limits-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: resource-limits
+  template:
+    metadata:
+      labels:
+        app: resource-limits
+    spec:
+      containers:
+      - name: resource-limits-container
+        image: nginx
+        resources:
+          limits:
+            cpu: "2"
+            memory: "1Gi"

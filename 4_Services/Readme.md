@@ -61,8 +61,23 @@ when a new pod comes up then service always checks for label name not the ip add
 
 # 3. Expose to External World
 
+service will application to expose to outside world to access users from different locations  
+
+exposing to external world in 2 ways  
+__1) Cluster IP :__    Application can be accessed within the cluster only. Means users can access when they know the cluster IP address  
+
+__2) NodePort  :__   Users can access only when they know the Node IP address (EC2 instance) or within the organization like VPC  
+
+![](https://miro.medium.com/v2/resize:fit:828/format:webp/1*vE8I8ee8JBPrM54DksA8cA.png) 
+
+__3) Load Balancer  :__ Available to everyone in the world, we are using cloud like EKS provides Elastic Load Balancer (ELB)...  
+
+CCM give a public ip address and this ip address is rigistered in DNS so that user can access by name not with IP address
+
 
 ![](https://miro.medium.com/v2/resize:fit:1400/0*oIZ93q4u-Sx9DT5E.JPG  )  
 
 
-![](https://miro.medium.com/v2/resize:fit:1400/0*4i9ixAtDnd7HiaV7)
+![](https://i.octopus.com/blog/2022-11/difference-clusterip-nodeport-loadbalancer-kubernetes/loadbalancer.png)  
+
+![](https://matthewpalmer.net/kubernetes-app-developer/articles/service-annotated.png)

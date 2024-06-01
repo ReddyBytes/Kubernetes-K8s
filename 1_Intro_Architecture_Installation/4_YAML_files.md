@@ -45,3 +45,25 @@ A YAML (YAML Ain't Markup Language) file is a human-readable data serialization 
         - name: Alice Johnson
           age: 35
           city: Los Angeles
+
+
+
+
+
+## YAML in Kubernetes  
+
+1) __apiVersion :__ This is the apiversion that we are using to create k8s objects.
+   
+       
+         Pod: v1
+         Service: v1
+         ReplicaSet: apps/v1
+         Deployment: apps/v1 
+    
+2) __kind :__  type of object
+3) __metadata :__ the metadata about the object
+      
+4) __spec :__  additional details about the object 
+   
+   
+![](https://media.licdn.com/dms/image/D5612AQEksLmcGmFENg/article-inline_image-shrink_1500_2232/0/1688282078065?e=1722470400&v=beta&t=0BMnZhP0CZGwkg6llnbpY751Fc90S1lGNa-afcfBy5w)

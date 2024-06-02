@@ -29,13 +29,13 @@ LB transfers the request to all pods equally, by default LB follows __Round Robi
 
 ### Again we have a doubt that even how Services knows that the request is to transfer to a particular appication if there is a change in IP-address : 
 
-here service does not depends on IP-address to transfer load it follows __Service Discovery__ mechanism 
+here service does not depends on IP-address, it follows __Service Discovery__ mechanism 
 
 SD creates  
 __Labels__ for service,deploy   
-__Selectors__ for conatiners 
+__Selectors__ for containers 
 
-when a new pod comes up then service always checks for label name not the ip address
+when a new pod comes up with template then service always checks for label name not the ip address
   
     
     apiVersion: apps/v1

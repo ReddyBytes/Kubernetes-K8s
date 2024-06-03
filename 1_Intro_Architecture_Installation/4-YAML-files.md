@@ -1,5 +1,5 @@
 ## YAML file
-A YAML (YAML Ain't Markup Language) file is a human-readable data serialization standard used in configuration files,  
+A YAML (YAML Ain't Markup Language). It is a human-readable data serialization standard used in configuration files,  
 
 ### Why we need ???
 - YAML is known for its readability and simplicity.
@@ -10,7 +10,8 @@ A YAML (YAML Ain't Markup Language) file is a human-readable data serialization 
 - Allows for direct inclusion of comments within the file.
 - Has extensive library support in various programming languages.
 
-
+see the difference between YAML, JSON, XML  
+![](https://www.cyberfella.co.uk/wp-content/uploads/2020/04/xml-json-yaml-1024x273.png)
 ## YAML syntax
 
 ### Strings, Numbers and Booleans :

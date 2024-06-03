@@ -51,4 +51,4 @@ if somebody kills or crashes the container then the application stops running wh
 
  -------  
 
- 
+ Finally __Kubernetes is a open source system for automated deployment, scaling and management of containerised applications.__

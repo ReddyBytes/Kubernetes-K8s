@@ -1,4 +1,6 @@
 # Pods
+
+![](/images/pods.png)
 1) In k8s lowest deployment is pod  
 2) pod describes the definition of how to run a container
 3) pod is nothing but a wrapper around container  

@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-project
+  labels:
+    app: sample-project
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: sample-project
+  template:
+    metadata:
+      labels:
+        app: sample-project
+    spec:
+      containers:
+      - name: python-app
+        image: abhishekf5/python-sample-app-demo:v1
+        volumeMounts:
+        - name: db-connection-volume
+          mountPath: /opt             # Mount the volume at /opt in the container
+        
+        ports:
+        - containerPort: 80
+      volumes:
+        - name: db-connection-volume
+          configMap:
+            name: my-config
+            items:
+            - key: db_port

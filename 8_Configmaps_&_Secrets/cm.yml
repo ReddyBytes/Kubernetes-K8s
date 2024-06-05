@@ -1,0 +1,6 @@
+apiVersion: V1
+kind: ConfigMap
+metadata:
+  name: my-configmap
+data:
+  db_port: "3306"

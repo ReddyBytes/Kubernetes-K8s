@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-project
+  labels:
+    app: sample-project
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: sample-project
+  template:
+    metadata:
+      labels:
+        app: sample-project
+    spec:
+      containers:
+      - name: python-app
+        image: abhishekf5/python-sample-app-demo:v1
+        env:
+        - name: DB_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: my-config
+              key: db_port
+        ports:
+        - containerPort: 80

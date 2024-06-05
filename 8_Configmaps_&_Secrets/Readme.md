@@ -1,7 +1,7 @@
 # ConfigMaps and Secretes  
 
-These are like .env files which stores env varibles like password,username etc., In k8s we store such type of information in configmaps.  
-And more sensitive information will store in secrets file these are encrypted . and we can do customizations and can give strong RBAC protection.
+These are like .env files which stores env variables like password,username etc., In k8s we store such type of information in configmaps.  
+And more sensitive information will store in secrets file these are encrypted . and we can do customizations and can give strong RBAC protection to secrets
 
 Both Configmaps and secrets are stored in etcd but secrets are stored in encrypted format
 

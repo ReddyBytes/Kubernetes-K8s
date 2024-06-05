@@ -24,8 +24,8 @@ spec:
         ports:
         - containerPort: 80
       volumes:
+      
         - name: db-connection-volume
           configMap:
-            name: my-config
-            items:
-            - key: db_port
+            name: my-configmap
+            

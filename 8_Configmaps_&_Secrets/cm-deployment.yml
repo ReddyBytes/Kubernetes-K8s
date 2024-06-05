@@ -21,7 +21,7 @@ spec:
         - name: DB_PORT
           valueFrom:
             configMapKeyRef:
-              name: my-config
+              name: my-configmap
               key: db_port
         ports:
         - containerPort: 80

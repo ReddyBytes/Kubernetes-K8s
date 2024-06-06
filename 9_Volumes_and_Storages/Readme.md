@@ -56,7 +56,10 @@ __1. Static__
 In static provisioning, the cluster administrator creates PVs with details of available storage. These PVs are pre-defined in the Kubernetes API and are ready for use by cluster users.
 
 __2. Dynamic__  
-In dynamic provisioning, when no static PV matches a user’s PersistentVolumeClaim (PVC), the cluster can automatically provision a volume. 
+In dynamic provisioning, when no static PV matches a user’s PersistentVolumeClaim (PVC), the cluster can automatically provision a volume.   
+
+![](https://www.researchgate.net/publication/368281482/figure/fig4/AS:11431281117874688@1675566270775/PV-and-PVC-relationship-diagram.png
+)
 
  ### 2 . Persistent Volume Claims ( PVC ) : 
  - A PVC is a storage request made by a user. It works similarly to a pod but consumes PV resources rather than node resources  

@@ -6,3 +6,15 @@ __step 2 :__ start the minikube cluster
     minikube start
 
 __step 3 :__ install kubectl from [here](https://kubernetes.io/docs/tasks/tools/)  
+
+
+
+
+### commands
+
+- to know the node ip address  
+  
+
+        minikube ip -p local-cluster
+
+        minikube service <service name> -p local-cluster

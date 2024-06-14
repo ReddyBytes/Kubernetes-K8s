@@ -5,7 +5,7 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-    app: nginx
+    app: front-end-ui
   ports:
     - port: 8080
-      targetPort: 5000
+      targetPort: 80

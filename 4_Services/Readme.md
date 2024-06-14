@@ -65,10 +65,16 @@ service will application to expose to outside world to access users from differe
 
 exposing to external world in 3 ways  
 __1) Cluster IP :__    Application can be accessed within the cluster only. Means users can access when they know the cluster IP address  
+![](/images/clusterip.png)
 
-__2) NodePort  :__   Users can access only when they know the Node IP address (EC2 instance) or within the organization like VPC  
+#### multiport 
+![](/images/multiport.png)
+__2) NodePort  :__   Users can access only when they know the Node IP address (EC2 instance) or within the organization like VPC
 
-![](https://miro.medium.com/v2/resize:fit:828/format:webp/1*vE8I8ee8JBPrM54DksA8cA.png) 
+Node port ranges from 30000-32767
+
+![](/images/nodeport.png)
+ 
 
 __3) Load Balancer  :__ Available to everyone in the world, we are using cloud like EKS provides Elastic Load Balancer (ELB)...  
 

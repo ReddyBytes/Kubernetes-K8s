@@ -19,9 +19,11 @@ __Step 3 :__ install the kubectl follow [this page](https://kubernetes.io/docs/t
 __Step 4 :__ find the best path to place kubectl and mv the kubectl to that path and change the permissions for kubectl  
   
     echo $PATH
+
     mv kubectl /usr/local/bin
+
     chmod +x /usr/local/bin/kubectl  
 
 __Step 5 :__ copy the command that u can find after the kind create command  
   
-    
+    kubectl cluster-info --context kind-praccluster

@@ -63,7 +63,7 @@ when a new pod comes up with template then service always checks for label name 
 
 service will application to expose to outside world to access users from different locations  
 
-exposing to external world in 2 ways  
+exposing to external world in 3 ways  
 __1) Cluster IP :__    Application can be accessed within the cluster only. Means users can access when they know the cluster IP address  
 
 __2) NodePort  :__   Users can access only when they know the Node IP address (EC2 instance) or within the organization like VPC  

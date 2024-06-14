@@ -26,4 +26,5 @@ __Step 4 :__ find the best path to place kubectl and mv the kubectl to that path
 
 __Step 5 :__ copy the command that u can find after the kind create command  
   
-    kubectl cluster-info --context kind-praccluster
+    kubectl cluster-info --context kind-2
+

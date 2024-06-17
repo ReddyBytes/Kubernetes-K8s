@@ -68,6 +68,7 @@ here i am installing nginx controller for minikube [see documentation](https://k
 3) sudo vi /etc/hosts
 
          # add your minikube ip with  host namein your yaml like 
+         vi /etc/hosts
 
          192.168.53.28 nginx-demo.com
 

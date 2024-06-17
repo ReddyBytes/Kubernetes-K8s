@@ -5,6 +5,8 @@ __step 2 :__ start the minikube cluster
   
     minikube start
 
+    mnikube start -p custom-cluster
+
 __step 3 :__ install kubectl from [here](https://kubernetes.io/docs/tasks/tools/)  
 
 
@@ -17,4 +19,20 @@ __step 3 :__ install kubectl from [here](https://kubernetes.io/docs/tasks/tools/
 
         minikube ip -p local-cluster
 
-        minikube service <service name> -p local-cluster
+        minikube service <service name> -p local-cluster 
+
+- to list the clusters 
+  
+    
+      minikube profile list 
+
+
+- use the custom cluster 
+  
+    
+      kubectl config use-context <custom-cluster>  
+
+- to know that which cluster u r using  
+  
+    
+      kubectl config current-context

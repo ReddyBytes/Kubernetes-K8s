@@ -33,6 +33,8 @@ Kubernetes came with a sol called Ingress Controllers ( ntg but an LB ) on the t
 
 These companies will provide controllers code in github and steps to impement as the devops teams we need to implement these controllers along with ingress by using [Helm charts](/1_Intro_Architecture_Installation/5-HelmCharts.md) or [YAML files](/1_Intro_Architecture_Installation/4-YAML-files.md)   
 
+
+![](/images/ingress.png)
 ![](https://miro.medium.com/v2/resize:fit:2000/1*AgWCYOe3yMevVfzT_1EHog.png)  
 
 
@@ -45,4 +47,29 @@ to enable ingress functinality we need to install ingress controller depends on 
 
 here i am installing nginx controller for minikube [see documentation](https://kubernetes.io/docs/tasks/access-application-cluster/ingress-minikube/)  
   
-    minikube addons enable ingress
+    minikube start --vm=true -p ingress-cluster
+
+    minikube addons enable ingress -p ingress-cluster
+
+    
+
+
+
+
+### yaml file
+
+![](/images/ingress-pathtype.png) 
+
+1) apply the simple-nginx.yml file
+2) get the ip address of minikube use 
+
+        minikube ip -p <cluster name>
+
+3) sudo vi /etc/hosts
+
+         # add your minikube ip with  host namein your yaml like 
+
+         192.168.53.28 nginx-demo.com
+
+4) access your application from browser by using host
+

@@ -1,20 +1,20 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ingress-example
+  name: nginx-ingress
 spec:
   rules:
-  - host: "foo.bar.com"
+  - host: "nginx-demo.com"
     http:
       paths:
       - pathType: Prefix
-        path: "/bar"
+        path: "/"
         backend:
           service:
             name: nginx-nodeport
             port:
-              number: 80
-  - host: "*.foo.com"
+              number: 8080
+
     http:
       paths:
       - pathType: Prefix
@@ -27,5 +27,3 @@ spec:
 
 
 
-# when the user hits foo.bar.com/bar it redirects to the svc on port 80
-# when the user hits *.foo.com/foo it redirects to the svc on port 5000

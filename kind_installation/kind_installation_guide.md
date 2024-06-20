@@ -16,6 +16,7 @@ __Step 3 :__ install the kubectl follow [this page](https://kubernetes.io/docs/t
   
     curl -LO https://dl.k8s.io/release/v1.30.0/bin/linux/amd64/kubectl  
 
+### kubectl installation
 __Step 4 :__ find the best path to place kubectl and mv the kubectl to that path and change the permissions for kubectl  
   
     echo $PATH

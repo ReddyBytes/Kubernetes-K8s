@@ -5,9 +5,9 @@ __step 2 :__ start the minikube cluster
   
     minikube start
 
-    mnikube start -p custom-cluster
+    minikube start -p custom-cluster
 
-__step 3 :__ install kubectl from [here](https://kubernetes.io/docs/tasks/tools/)  
+__step 3 :__ install kubectl from [here](/kind_installation/kind_installation_guide.md#kind-installation-)  
 
 
 

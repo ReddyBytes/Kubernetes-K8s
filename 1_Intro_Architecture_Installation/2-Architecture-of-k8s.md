@@ -19,7 +19,7 @@ The container runtime is the software responsible for running containers, monito
 
 ## 2) Kubelet
 
-- The kubelet is an agent that runs on each node in the Kubernetes cluster.   
+- The kubelet is a `DAEMON` Service that runs on each node in the Kubernetes cluster.   
 - Its primary responsibility is to ensure that containers are running in a pod as specified by the PodSpecs.  
 - The kubelet acts as a bridge between the Kubernetes master and the worker nodes, executing the commands sent by the master to maintain the desired state of the pods.
 
@@ -71,9 +71,7 @@ The container runtime is the software responsible for running containers, monito
 - It stores data about the cluster state, including nodes, namespaces, and the state of individual containers.
 
 
-### Responsibilities
 
-- **Data Storage**: Stores all cluster data in a consistent and highly-available manner.
 - **Configuration Sync**: Synchronizes configuration data across the cluster.
 
 
@@ -91,14 +89,9 @@ The container runtime is the software responsible for running containers, monito
 
 ## 4) Controller Manager
 
-- The Controller Manager is a daemon that manages all controllers like Replicaset controller,pod controller etc.  
+- The Controller Manager is a daemon that manages all controllers like Replicaset controller,pod controller,Node controller etc.  
 -  Ex : Replicaset controller is responsible to maintain desired no of pods in the cluster. To manage all controllers we need controller manager.
 
-
-### Responsibilities
-
-- **Control Loops**: Implements control loops that watch the cluster state and make changes as needed.
-- **Orchestration**: Coordinates the orchestration of containers across the cluster.
 
 
 ## 5) Cloud Controller Manager
@@ -113,3 +106,8 @@ The container runtime is the software responsible for running containers, monito
 - **Cloud Provider Integration**: Coordinates with cloud providers to manage resources like load balancers, storage volumes, and more.
 
 
+
+---
+---
+
+IMP :`Except kubelet remaining all components runs as pods . only kubelet runs as DAEMON`

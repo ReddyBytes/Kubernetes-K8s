@@ -12,10 +12,10 @@ __Docker__ is a containerization platform
 
     ![](https://code.visualstudio.com/assets/learn/develop-cloud/containers/container-architecture.png)  
 
-    Ifincase container A takes lot of memory then Container c may die ( because of containers are ephimeral in nature ) due of less memory which is not good for realtime usage  
+    If incase container A takes lot of memory then Container c may die ( because of containers are ephimeral in nature ) due of less memory which is not good for realtime usage  
 
 2) __Auto-Healing / Self-Healing :__  
-if somebody kills or crashes the container then the application stops running which causes users discomfort. And this container will run after manually starts that container. This is very difficult to manage 100's of containers in realtime.  
+If somebody kills or crashes the container then the application stops running which causes users discomfort. And this container will run after manually starts that container. This is very difficult to manage 100's of containers in realtime.  
 
 3) __Auto-Scaling :__  
    Let's say you create a container with 4cpu & 4 gb memory and can handle upto 10000 requests per min. But due to the sale you application receives 20000 requests per min then ur containers may not server as fast as before .  
@@ -29,8 +29,11 @@ if somebody kills or crashes the container then the application stops running wh
    C ) Auto Healing  
    D ) Auto scaling  
    E ) API Gateway  
-   F ) Blacklist some ip address  
-   G ) Communit support etc
+   F ) Blacklist some ip address 
+   G ) RBAC
+   H ) Statefulsets
+   I ) Health Probes, Namespaces  
+   J ) Community support etc
 
 ## How K8s solve this problems ??  
 1) __Single Host System :__   

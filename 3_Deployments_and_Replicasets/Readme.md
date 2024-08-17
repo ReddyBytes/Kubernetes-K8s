@@ -28,6 +28,13 @@ for more info [---->](https://kubernetes.io/docs/concepts/workloads/controllers/
 | **Deployments**| Managing Replicas                                                                | Deployments ensure that a specified number of Pod replicas are running at any given time, providing high availability. This managed replication helps in maintaining the desired state of applications even in the face of failures. | Rolling Updates | Deployments support rolling updates, allowing applications to be updated with minimal downtime. By gradually replacing old Pods with new ones, Deployments ensure that the application remains available throughout the update process. | Scaling | Deployments can scale applications up or down by adjusting the number of Pod replicas, responding to changes in demand. This scalability feature allows for automatic adjustment of resources based on current workload, optimizing resource usage and cost. |
 
 
+
+
+
+We can deploy Deployment in 2 ways namely:
+1) `Imperative :` Deploying Application using kubectl CLI
+2) `Declarative :` Deploying Application using YAML file
+
 ## Replicasets
 RS is the controller that implements the Auto Healing functionality  
 

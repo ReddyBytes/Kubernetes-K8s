@@ -44,3 +44,5 @@ __1. Maintaining Desired State :__ ReplicaSets ensure that a certain number of p
 __2. Scaling :__ By adjusting the number of replicas, ReplicaSets allow for scaling applications up or down based on demand.  
 
 __3. Rolling Updates :__ As part of Deployments, ReplicaSets support rolling updates, gradually replacing old pod instances with new ones to minimize downtime
+
+![](/3_Deployments_and_Replicasets/images/Screenshot%202024-08-25%20at%2010.42.32 AM.png)

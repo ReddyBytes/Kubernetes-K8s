@@ -1,3 +1,5 @@
+To know more commands [click here](https://kubernetes.io/docs/reference/kubectl/quick-reference/)
+
 - to know the apiversion and kind of k8s object  
   
       
@@ -13,5 +15,12 @@
   
     
       kubectl logs <podid> -f
+
+
+- to know more about k8s objects
+  
+    
+      kubectl explain <obj-name>
+      kubectl explain pod
 
 

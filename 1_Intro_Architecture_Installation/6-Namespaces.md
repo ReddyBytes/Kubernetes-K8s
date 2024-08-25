@@ -28,3 +28,47 @@ Used for service discovery and leader election for node heartbeats.
 Additionally, users can create `custom namespaces` for organizing their applications and services.  
 
 ![](https://www.devopsschool.com/blog/wp-content/uploads/2023/10/image-47.png)
+
+
+
+  
+    kubectl create ns <namespace name>
+
+In a clustere to list pods from a diff namspaces is difficult when we use `kubectl get pods -ns <namespace-name>`  . To avoid this we can use kubens binary .
+
+To switch between namespaces.
+
+### 1st way
+  
+    kubectl config set-context --current --namespace <namespace-name>
+
+
+### 2nd way
+#### setup of kubens in a cluster
+
+step 1:  
+   
+      `cd /usr/local/bin/`
+
+step 2:  copy the kubens latest release from [GitHub](https://github.com/ahmetb/kubectx/)  I'm using `V_0.9.5` for linux
+  
+    wget https://github.com/ahmetb/kubectx/releases/download/v0.9.5/kubens_v0.9.5_linux_x86_64.tar.gz
+
+step 3 : remove the extension of kubens use below commands
+
+    ls -al
+
+    tar zxvf kubens_v0.9.5_linux_x86_64.tar.gz
+
+    rm -rf kubens_v0.9.5_linux_x86_64.tar.gz
+
+    ls -al
+
+
+step 4 :  comeback and list namespaces 
+  
+    cd
+
+    kubens  # to list all namespaces
+    kubens <namespace name>  # to use that namespace
+    

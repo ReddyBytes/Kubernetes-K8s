@@ -19,6 +19,4 @@
     
 
 readineedprobe,livenessprobe
-  
 
-  

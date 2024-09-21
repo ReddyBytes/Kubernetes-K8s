@@ -54,5 +54,3 @@ A **StatefulSet** is a way to manage applications that need to remember their st
 - **Databases**: MySQL, PostgreSQL, Cassandra, etc.
 - **Distributed Systems**: Kafka, Zookeeper, etc.
 - **Applications with Stable Network Identities**: Redis, MongoDB, etc.
-
-m demon set

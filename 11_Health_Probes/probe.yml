@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: probe-example
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: probe-example
+  template:
+    metadata:
+      labels:
+        app: probe-example
+    spec:
+      containers:
+      - name: myapp
+        image: myapp:latest
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 10
+        livenessProbe:
+          httpGet:
+            path: /live
+            port: 8080
+          initialDelaySeconds: 3
+          periodSeconds: 5

@@ -19,11 +19,14 @@ sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
 SSH into each server using their public IP and install `containerd`:
 
 ```bash
+sudo su 
+cd 
+
 sudo apt update && apt install containerd -y
 
 ps -ef | grep -i containerd | grep -v grep  # to check the containerd is installed or not
 
-apt install net-tools
+sudo apt install net-tools
 
 netstat -nltp | grep -i containerd | grep -v grep  # to check the containerd is listening or not
 ```

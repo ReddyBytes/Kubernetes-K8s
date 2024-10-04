@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: test_deployment
+  name: test_deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: test_deployment
+  template:
+    metadata:
+      labels:
+        app: test_deployment
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+
+# kubectl apply -f <file name>
+
+
+echo '
+>
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: test_deployment
+  name: test_deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: test_deployment
+  template:
+    metadata:
+      labels:
+        app: test_deployment
+    spec:
+      containers:
+      - image: nginx:latest
+        name: nginx-container 
+      - image: postgresql:latest  
+        name: postgres-container
+        env:
+        - name: POSTGRES_USER
+          value: "testuser"
+        - name: POSTGRES_PASSWORD
+          value: "testpassword"
+        - name: POSTGRES_URL
+        value: "www.test.com" ' | kubectl apply -f -

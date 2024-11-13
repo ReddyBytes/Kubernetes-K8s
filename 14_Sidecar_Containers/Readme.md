@@ -47,7 +47,7 @@ There are three common types of sidecar containers used in Kubernetes:
 
 **Example containers :** 
 `splunk sidecar` for logs
-`cymantics sidecar` fro metrics etc.,
+`datadog sidecar` for metrics etc.,
 
 
 ---

@@ -1,6 +1,8 @@
 # ConfigMaps and Secretes  
 
 These are like .env files which stores env variables like password,username etc., In k8s we store such type of information in configmaps.  
+Configmaps can be used as env variables, volumemounts, files   
+
 And more sensitive information will store in secrets file these are encrypted . and we can do customizations and can give strong RBAC protection to secrets
 
 Both Configmaps and secrets are stored in etcd but secrets are stored in encrypted format
@@ -22,6 +24,19 @@ to update the env variables in running container __VolumeMounts__ came to solve 
 
 
 Kubernetes supports several types of secrets, each designed for different use cases. Below is a detailed explanation of the most common secret types.
+
+In relatime we use mostly `generic` , `registry` secrets only.
+
+```yaml
+    kubectl create secret generic <secret name> --from-file <file location>
+    
+    kubectl create secret generic <secret name> --from-literal=key=value
+    
+    kubectl create secret docker-registry <secret name> \
+    --docker-server=docker.io --docker-username=<your docker username> \
+    --docker-password=<your docker password> \
+    --docker-email=<your docker email>      ## This secret name we need to pass under imagePullSecrets in yaml file when we want to pull private docker images 
+```
 
 | **Secret Type**                           | **Purpose**                                                                                                                                                             | **Details**                                                                                                                                             |
 |-------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|

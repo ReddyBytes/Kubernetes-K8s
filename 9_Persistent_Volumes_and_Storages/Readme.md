@@ -30,25 +30,25 @@ Storing data that needed to be available even after a container restarted or cra
 
 ## Types of Volumes
 ### 1 . Persistent Volumes ( PV ) :  
- It is like a a piece of storage on host machine where we link our container data to  this volume , so that when a container lost we don't loss data .   
- ###  Types of Persistent Volume
+It is like a a piece of storage on host machine where we link our container data to  this volume , so that when a container lost we don't loss data .   
 
+###  Types of Persistent Volume
 
-`local –` Data is stored on devices mounted locally to your cluster’s Nodes.  
+a. `local –` Data is stored on devices mounted locally to your cluster’s Nodes.  
 
-`hostPath –`  Stores data within a named directory on a Node (this is designed for testing purposes and doesn’t work with multi-Node clusters).  
+b. `hostPath –`  Stores data within a named directory on a Node (this is designed for testing purposes and doesn’t work with multi-Node clusters).  
 
-`nfs –` Used to access Network File System (NFS) mounts.  
+c. `nfs –` Used to access Network File System (NFS) mounts.  
 
-`iscsi –` iSCSI (SCSI over IP) storage attachments.  
+d. `iscsi –` iSCSI (SCSI over IP) storage attachments.  
 
-`csi –` Allows integration with storage providers that support the Container Storage Interface (CSI) specification, such as the block storage services provided by cloud platforms.  
+e. `csi –` Allows integration with storage providers that support the Container Storage Interface (CSI) specification, such as the block storage services provided by cloud platforms.  
 
-`cephfs –` Allow the use of CephFS volumes.  
+f. `cephfs –` Allow the use of CephFS volumes.  
 
-`fc –` Fibre Channel (FC) storage attachments.  
+g. `fc –` Fibre Channel (FC) storage attachments.  
 
-`rbd –` Rados Block Device (RBD) volumes.  
+h. `rbd –` Rados Block Device (RBD) volumes.  
 
 ### Provisioning of PersistentVolumes
 

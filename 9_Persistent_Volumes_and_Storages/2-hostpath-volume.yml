@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: containerd-deamonset
+  labels:
+    app: containerd-deamonset
+spec:
+  selector:
+    matchLabels:
+      app: containerd-deamonset
+  template:
+    metadata:
+      labels:
+        app: containerd-deamonset
+    spec:
+      containers:
+      - name: troubleshooting
+        image: kiran2361993/troubleshootingtools:v1 
+        volumeMounts:
+          - name: containerdsock
+            mountPath: "/run/containerd/containerd.sock"
+      volumes:
+        - name: containerdsock
+          hostPath:
+            path: /run/containerd/containerd.sock
+
+
+
+# this demonset will run in everynode and we are installing containerd inside the container so that we can access host details(getting containers, images,etc ) from inside container also

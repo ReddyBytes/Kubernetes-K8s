@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: redis
+          image: redis
+          volumeMounts:
+            - name: myemptydir
+              mountPath: /etc/myemptydir
+        - name: nginx
+          image: nginx:latest
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - mountPath: /tmp/myemptydir
+              name: myemptydir
+      volumes:
+        - name: myemptydir
+          emptyDir: {}
+
+
+# create this emptydir volume deployment and login to 1st container >> /etc/myemptydir >> then add any sample file and login to another container /tmp/emptydir there you can find the file that created in 1st container because both the containers are usig the same emptydir volume

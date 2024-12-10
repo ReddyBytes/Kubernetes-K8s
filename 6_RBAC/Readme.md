@@ -1,11 +1,10 @@
 # RBAC  ( Role Based Access Control ) :
 To understand RBAC i divide them into 2 parts   
 1) __Users :__   
-   Based on the role and job description  of user/Engineer we will give permissions for to certain extend.
+   Based on the role and job description  of user/Engineer we will give permissions to certain extend.
 
-2) __Service Accounts :__  
-   Based on the  kind/name of the service we will give permissions .
-   lets say a pod can access secrets, configmaps, etc or not .  
+2) __Admin :__  
+   He has the access to entire cluster so he can do anything on cluster level. 
 
 ### How RBAC Managing these Permisssions:
 1) __Service Accounts/Users :__  
